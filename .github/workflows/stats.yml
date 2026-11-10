@@ -1,0 +1,32 @@
+name: Refresh stats
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/stats.py]
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      # A personal token with read:user sees private work too; without one the
+      # committed card is kept as it is.
+      - run: |
+          if [ -z "$STATS_TOKEN" ]; then echo "STATS_TOKEN is not set; keeping the committed card"; exit 0; fi
+          python3 scripts/stats.py
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats-light.svg assets/stats-dark.svg
+          git diff --cached --quiet || git commit -m "Refresh stats"
+          git push
