@@ -20,8 +20,6 @@ I build [Floqer](https://floqer.com). Along the way I read a lot of database and
   <img src="assets/stats-light.svg" width="100%" alt="Contributions, pull requests, stars, followers, longest streak, and languages">
 </picture>
 
-Redrawn every morning by [one script](scripts/stats.py) in this repo.
-
 ### Reach me
 
 [LinkedIn](https://www.linkedin.com/in/deepdave007/) · [deepajaydave@gmail.com](mailto:deepajaydave@gmail.com) · [deepdave.co](https://www.deepdave.co)
