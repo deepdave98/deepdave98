@@ -3,7 +3,7 @@
   <img src="assets/header-light.svg" width="100%" alt="Deep Dave. Building Floqer. Fixing the data infrastructure I build on.">
 </picture>
 
-I build [Floqer](https://floqer.com) in Toronto. Along the way I read a lot of database and query engine code, and when something is wrong I fix it upstream.
+I build [Floqer](https://floqer.com). Along the way I read a lot of database and query engine code.
 
 ### Open source
 
