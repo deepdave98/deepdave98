@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-  <img src="assets/header-light.svg" width="100%" alt="Deep Dave. Building Floqer. Fixing the data infrastructure I build on.">
+  <img src="assets/header-light.svg" width="100%" alt="Deep Dave. Building Floqer>
 </picture>
 
 I build [Floqer](https://floqer.com). Along the way I read a lot of database and query engine code.
