@@ -3,7 +3,7 @@
   <img src="assets/header-light.svg" width="100%" alt="Deep Dave | Building Floqer>
 </picture>
 
-I build [Floqer](https://floqer.com). Along the way I read a lot of database and query engine code.
+I build [Floqer](https://floqer.com). Along the way I learn and read a lot of database and query engine code.
 
 ### Open source
 
