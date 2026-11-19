@@ -10,8 +10,8 @@ I build [Floqer](https://floqer.com). Along the way I learn and read a lot of da
 | Project | What I did | Status |
 | --- | --- | --- |
 | [Apache Iceberg, PyIceberg](https://github.com/apache/iceberg-python) | `create_branch` and `create_tag` silently overwrote an existing ref and orphaned its commits. Added the existence, kind and `main` guards the Java implementation has, with tests. | Merged, [#4319](https://github.com/apache/iceberg-python/pull/4319) |
-| [DuckDB Node client](https://github.com/duckdb/duckdb-node-neo) | `using` declarations now close results, statements, appenders, connections and instances on every way out of a scope: `Symbol.dispose` on all seven classes, with tests for each. | Open, [#530](https://github.com/duckdb/duckdb-node-neo/pull/530) |
-| [HydraDB](https://github.com/hydra-db/hydradb) | Found that the experimental Cypher engine accepts `ORDER BY` on a binding an aggregating or `DISTINCT` `RETURN` has dropped and sorts by an arbitrary row. Fix with tests ready on my fork. | Reported, [#313](https://github.com/hydra-db/hydradb/issues/313) |
+| [DuckDB Node client](https://github.com/duckdb/duckdb-node-neo) | `Symbol.dispose` on every class with an explicit close, so `using` releases results, statements, appenders and connections on every way out of a scope. Bindings for the config option C API: define a custom setting, register it, read any setting back with its scope. | Open, [#530](https://github.com/duckdb/duckdb-node-neo/pull/530) and [#531](https://github.com/duckdb/duckdb-node-neo/pull/531) |
+| [HydraDB](https://github.com/hydra-db/hydradb) | Found that the experimental Cypher engine sorted aggregated results by a dropped variable; fixed in v0.4.0. Then found the new check rejects a valid openCypher TCK query and reported that with the exact scenario. | Reported, [#313](https://github.com/hydra-db/hydradb/issues/313) and [#325](https://github.com/hydra-db/hydradb/issues/325) |
 | [postsmith](https://github.com/deepdave98/postsmith) | Writes LinkedIn and X posts in your voice from a corpus you supply. | Maintainer |
 
 ### Stats
