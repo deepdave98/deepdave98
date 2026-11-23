@@ -17,16 +17,18 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      # A personal token with read:user sees private work too; without one the
-      # committed card is kept as it is.
+        with:
+          token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+      # STATS_TOKEN is a personal token with read:user and repo. With it the
+      # card counts private work and the refresh commit is authored by the
+      # account. Without it the committed card is left as it is.
       - run: |
           if [ -z "$STATS_TOKEN" ]; then echo "STATS_TOKEN is not set; keeping the committed card"; exit 0; fi
           python3 scripts/stats.py
-        env:
-          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
-      - run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Deep Dave"
+          git config user.email "deepajaydave@gmail.com"
           git add assets/stats-light.svg assets/stats-dark.svg
           git diff --cached --quiet || git commit -m "Refresh stats"
           git push
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
